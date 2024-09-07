@@ -8,14 +8,12 @@
   <name>Snakeify</name>
 
   <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-  <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+  <vendor email="shinriyo@gmail.com" url="https://www.yourcompany.com">shinriyo</vendor>
 
-  <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
-       Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
-       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+  <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager. -->
   <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+    This plugin renames selected Dart class names to snake_case format.<br>
+    <em>Supports various project configurations.</em>
   ]]></description>
 
   <!-- Product and plugin compatibility requirements.
@@ -27,4 +25,14 @@
   <extensions defaultExtensionNs="com.intellij">
 
   </extensions>
+
+  <actions>
+    <action
+            id="RenameToSnakeCaseAction"
+            class="com.shinriyo.snakeify.RenameToSnakeCaseAction"
+            text="Rename to Snake Case"
+            description="Rename the selected Dart class to snake_case format">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/> <!-- エディタの右クリックメニューに追加 -->
+    </action>
+  </actions>
 </idea-plugin>

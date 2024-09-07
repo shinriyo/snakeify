@@ -17,7 +17,8 @@ intellij {
   version.set("2023.2.6")
   type.set("IC") // Target IDE Platform
 
-  plugins.set(listOf(/* Plugin Dependencies */))
+  // これがないとPsiClassできない
+  plugins.set(listOf(/* Plugin Dependencies */"java"))
 }
 
 tasks {
